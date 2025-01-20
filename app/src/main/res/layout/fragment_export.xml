@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EFEFEF"
+    android:paddingVertical="@dimen/_10sdp"
+    tools:context=".presentation.export.ExportFragment">
+
+    <ImageView
+        android:id="@+id/btnHome"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:background="@drawable/bg_item_home_project"
+        android:padding="@dimen/_7sdp"
+        android:src="@drawable/ic_home"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitleScreen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvTitleScreen" />
+
+    <TextView
+        android:id="@+id/tvTitleScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="@string/export"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@id/llShareVideo"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleScreen"
+        tools:layout_editor_absoluteX="13dp" />
+
+    <TextView
+        android:id="@+id/tvDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintBottom_toBottomOf="@id/tvFps"
+        app:layout_constraintEnd_toStartOf="@id/tvFps"
+        app:layout_constraintTop_toTopOf="@id/tvFps"
+        tools:text="00:00" />
+
+    <TextView
+        android:id="@+id/tvFps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_7sdp"
+        android:layout_marginEnd="354dp"
+        android:layout_marginBottom="518dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/videoView"
+        app:layout_constraintEnd_toEndOf="@+id/videoView"
+        tools:text="12 fps" />
+
+    <LinearLayout
+        android:id="@+id/llShareVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp"
+        app:layout_constraintBottom_toTopOf="@id/btnSaveToDevice"
+        tools:layout_editor_absoluteX="19dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/share"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:src="@drawable/ic_arrow_right" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_1sdp"
+        android:background="#CDCDCD"
+        app:layout_constraintTop_toBottomOf="@id/llShareVideo" />
+
+    <Button
+        android:id="@+id/btnSaveToDevice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:backgroundTint="#abc"
+        android:text="@string/save_to_device"
+        android:textSize="@dimen/_13sdp"
+        app:layout_constraintBottom_toTopOf="@id/btnRemoveWatermark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnRemoveWatermark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:backgroundTint="#abc"
+        android:text="@string/remove_watermark"
+        android:textSize="@dimen/_13sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

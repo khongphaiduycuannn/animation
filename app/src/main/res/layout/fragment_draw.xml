@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.create_project.DrawFragment">
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp"
+        android:background="#DEDEDE"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btnClose"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:background="@drawable/bg_item_home_project"
+        android:padding="@dimen/_4sdp"
+        android:src="@drawable/ic_close"
+        app:layout_constraintBottom_toBottomOf="@id/view1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view1" />
+
+    <TextView
+        android:id="@+id/tvProjectFormat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:textSize="@dimen/_13sdp"
+        app:layout_constraintBottom_toBottomOf="@id/btnClose"
+        app:layout_constraintStart_toEndOf="@id/btnClose"
+        app:layout_constraintTop_toTopOf="@id/btnClose"
+        tools:text="MP4 1:1 12 FPS" />
+
+    <ImageView
+        android:id="@+id/btnShowOptions"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:padding="@dimen/_4sdp"
+        android:rotation="90"
+        android:src="@drawable/ic_show_options"
+        app:layout_constraintBottom_toBottomOf="@id/view1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnExport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_1sdp"
+        android:backgroundTint="#abc"
+        android:text="@string/export"
+        app:layout_constraintBottom_toBottomOf="@id/view1"
+        app:layout_constraintEnd_toStartOf="@id/btnShowOptions"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.otaliastudios.zoom.ZoomLayout
+        android:id="@+id/zoomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        app:animationDuration="280"
+        app:flingEnabled="false"
+        app:hasClickableChildren="true"
+        app:layout_constraintBottom_toTopOf="@id/clToolbar"
+        app:layout_constraintTop_toBottomOf="@id/view1"
+        app:maxZoom="2.5"
+        app:maxZoomType="zoom"
+        app:minZoom="0.5"
+        app:minZoomType="zoom"
+        app:overPinchable="false"
+        app:overScrollHorizontal="true"
+        app:overScrollVertical="true"
+        app:scrollEnabled="false"
+        app:transformation="centerInside"
+        app:twoFingersScrollEnabled="true"
+        app:zoomEnabled="true">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.ndmq.android_mvvm_project_base.custom_view.draw_view.BackgroundView
+                android:id="@+id/ivColorBackground"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.ndmq.android_mvvm_project_base.custom_view.draw_view.BackgroundView
+                android:id="@+id/ivImageBackground"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop" />
+
+            <com.ndmq.android_mvvm_project_base.custom_view.draw_view.DrawView
+                android:id="@+id/previewDrawView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.3"
+                app:isLocked="true" />
+
+            <com.ndmq.android_mvvm_project_base.custom_view.draw_view.DrawView
+                android:id="@+id/drawView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.ndmq.android_mvvm_project_base.custom_view.draw_view.StickerLayerView
+                android:id="@+id/stickerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:showBorder="true"
+                app:showIcons="true" />
+
+            <com.ndmq.android_mvvm_project_base.custom_view.draw_view.GridView
+                android:id="@+id/gridView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.8"
+                app:gridColor="@color/black"
+                app:showGrid="true" />
+        </FrameLayout>
+
+    </com.otaliastudios.zoom.ZoomLayout>
+
+
+    <View
+        android:id="@+id/vStickerDropdownView"
+        android:layout_width="@dimen/_126sdp"
+        android:layout_height="1dp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_140sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/llBrushTools"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/llBrushTools"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="#EDEDED"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/zoomLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:id="@+id/btnSelectBrushColor"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@color/black" />
+
+        <SeekBar
+            android:id="@+id/sbBrushWidth"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:max="67"
+            android:min="10"
+            android:progress="15"
+            android:progressTint="@color/black"
+            android:thumbTint="@color/black" />
+
+        <TextView
+            android:id="@+id/tvBrushWidth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="15px"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llEraseTools"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="#EDEDED"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/zoomLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <SeekBar
+            android:id="@+id/sbEraseWidth"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:max="67"
+            android:min="10"
+            android:progress="15"
+            android:progressTint="@color/black"
+            android:thumbTint="@color/black" />
+
+        <TextView
+            android:id="@+id/tvEraseWidth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="15px"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llFillColorTools"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="#EDEDED"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/zoomLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:id="@+id/btnSelectFillColor"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llDropColorTools"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="#EDEDED"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/zoomLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:id="@+id/viewDropColor"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llShapeTools"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="#EDEDED"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/zoomLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:id="@+id/btnSelectShapeColor"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@color/black" />
+
+        <ImageView
+            android:id="@+id/btnShapeRect"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:src="@drawable/ic_rectangle" />
+
+        <ImageView
+            android:id="@+id/btnShapeOval"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:src="@drawable/ic_ellipse" />
+
+        <SeekBar
+            android:id="@+id/sbShapeWidth"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:max="67"
+            android:min="10"
+            android:progress="15"
+            android:progressTint="@color/black"
+            android:thumbTint="@color/black" />
+
+        <TextView
+            android:id="@+id/tvShapeWidth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="15px"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llTextTools"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="#EDEDED"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/zoomLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:id="@+id/btnSelectTextColor"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@color/black" />
+
+        <TextView
+            android:id="@+id/tvAddText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/_3sdp"
+            android:text="@string/add_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EDEDED"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_5sdp"
+        app:layout_constraintBottom_toTopOf="@id/view2">
+
+        <LinearLayout
+            android:id="@+id/llPaintTools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/btnPaste"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/btnBrush"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#aabbcc"
+                android:paddingVertical="@dimen/_5sdp"
+                android:src="@drawable/ic_brush" />
+
+            <ImageView
+                android:id="@+id/btnErase"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_eraser" />
+
+            <ImageView
+                android:id="@+id/btnFillColor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_paint_bucket_02" />
+
+            <ImageView
+                android:id="@+id/btnDropColor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_color_picker" />
+
+            <ImageView
+                android:id="@+id/btnShape"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_shape" />
+
+            <ImageView
+                android:id="@+id/btnImage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_image_02" />
+
+            <ImageView
+                android:id="@+id/btnText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_text" />
+
+            <ImageView
+                android:id="@+id/btnSticker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_sticker" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btnUndo"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/ic_undo"
+            app:layout_constraintBottom_toBottomOf="@id/btnRedo"
+            app:layout_constraintEnd_toStartOf="@id/btnRedo" />
+
+        <ImageView
+            android:id="@+id/btnRedo"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/ic_redo"
+            app:layout_constraintBottom_toBottomOf="@id/btnCopy"
+            app:layout_constraintEnd_toStartOf="@id/btnCopy" />
+
+        <ImageView
+            android:id="@+id/btnCopy"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/ic_copy"
+            app:layout_constraintBottom_toBottomOf="@id/btnPaste"
+            app:layout_constraintEnd_toStartOf="@id/btnPaste" />
+
+        <ImageView
+            android:id="@+id/btnPaste"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/ic_paste"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp"
+        android:background="#DEDEDE"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/btnPreviewProject"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/bg_item_home_project"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/ic_play"
+        app:layout_constraintBottom_toBottomOf="@id/view2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view2" />
+
+    <ImageView
+        android:layout_width="@dimen/_52sdp"
+        android:layout_height="@dimen/_39sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:background="@drawable/bg_item_home_project"
+        android:elevation="0.1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnPreviewProject"
+        app:layout_constraintTop_toTopOf="@id/view2" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rclFrames"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:elevation="0.05dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnPreviewProject"
+        app:layout_constraintTop_toTopOf="@id/view2"
+        tools:listitem="@layout/item_draw_frame" />
+</androidx.constraintlayout.widget.ConstraintLayout>

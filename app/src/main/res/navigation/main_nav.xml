@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/setupProjectFragment"
+        android:name="com.ndmq.android_mvvm_project_base.presentation.setup_project.SetupProjectFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_setup_project">
+        <action
+            android:id="@+id/action_setUpProjectFragment_to_drawFragment"
+            app:destination="@id/drawFragment"
+            app:enterAnim="@anim/enter_zoom_out"
+            app:exitAnim="@anim/exit_zoom_in"
+            app:popEnterAnim="@anim/enter_zoom_in"
+            app:popExitAnim="@anim/exit_zoom_out"
+            app:popUpTo="@id/setupProjectFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_setupProjectFragment_to_chooseBackgroundFragment"
+            app:destination="@id/chooseBackgroundFragment"
+            app:enterAnim="@anim/enter_zoom_out"
+            app:exitAnim="@anim/exit_zoom_in"
+            app:popEnterAnim="@anim/enter_zoom_in"
+            app:popExitAnim="@anim/exit_zoom_out" />
+        <action
+            android:id="@+id/action_setupProjectFragment_to_chooseFormatFragment"
+            app:destination="@id/chooseFormatFragment"
+            app:enterAnim="@anim/enter_zoom_out"
+            app:exitAnim="@anim/exit_zoom_in"
+            app:popEnterAnim="@anim/enter_zoom_in"
+            app:popExitAnim="@anim/exit_zoom_out" />
+        <action
+            android:id="@+id/action_setupProjectFragment_to_chooseCanvasSizeFragment"
+            app:destination="@id/chooseCanvasSizeFragment"
+            app:enterAnim="@anim/enter_zoom_out"
+            app:exitAnim="@anim/exit_zoom_in"
+            app:popEnterAnim="@anim/enter_zoom_in"
+            app:popExitAnim="@anim/exit_zoom_out" />
+        <action
+            android:id="@+id/action_setupProjectFragment_to_chooseFpsFragment"
+            app:destination="@id/chooseFpsFragment"
+            app:enterAnim="@anim/enter_zoom_out"
+            app:exitAnim="@anim/exit_zoom_in"
+            app:popEnterAnim="@anim/enter_zoom_in"
+            app:popExitAnim="@anim/exit_zoom_out" />
+        <action
+            android:id="@+id/action_setupProjectFragment_to_colorPickerDialog"
+            app:destination="@id/colorPickerDialog"
+            app:enterAnim="@anim/enter_zoom_out"
+            app:exitAnim="@anim/exit_zoom_in"
+            app:popEnterAnim="@anim/enter_zoom_in"
+            app:popExitAnim="@anim/exit_zoom_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/drawFragment"
+        android:name="com.ndmq.android_mvvm_project_base.presentation.create_project.DrawFragment"
+        android:label="fragment_draw"
+        tools:layout="@layout/fragment_draw">
+        <action
+            android:id="@+id/action_drawFragment_to_exportFragment"
+            app:destination="@id/exportFragment"
+            app:enterAnim="@anim/enter_zoom_out"
+            app:exitAnim="@anim/exit_zoom_in"
+            app:popEnterAnim="@anim/enter_zoom_in"
+            app:popExitAnim="@anim/exit_zoom_out"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_drawFragment_to_colorPickerDialog"
+            app:destination="@id/colorPickerDialog"
+            app:enterAnim="@anim/enter_zoom_out"
+            app:exitAnim="@anim/exit_zoom_in"
+            app:popEnterAnim="@anim/enter_zoom_in"
+            app:popExitAnim="@anim/exit_zoom_out" />
+        <action
+            android:id="@+id/action_drawFragment_to_editProjectFragment"
+            app:destination="@id/editProjectFragment"
+            app:enterAnim="@anim/enter_zoom_out"
+            app:exitAnim="@anim/exit_zoom_in"
+            app:popEnterAnim="@anim/enter_zoom_in"
+            app:popExitAnim="@anim/exit_zoom_out" />
+        <action
+            android:id="@+id/action_drawFragment_to_setTextDialog"
+            app:destination="@id/setTextDialog"
+            app:enterAnim="@anim/enter_zoom_out"
+            app:exitAnim="@anim/exit_zoom_in"
+            app:popEnterAnim="@anim/enter_zoom_in"
+            app:popExitAnim="@anim/exit_zoom_out" />
+        <action
+            android:id="@+id/action_drawFragment_to_removeImageBackgroundFragment"
+            app:destination="@id/removeImageBackgroundFragment"
+            app:enterAnim="@anim/enter_zoom_out"
+            app:exitAnim="@anim/exit_zoom_in"
+            app:popEnterAnim="@anim/enter_zoom_in"
+            app:popExitAnim="@anim/exit_zoom_out" />
+        <action
+            android:id="@+id/action_drawFragment_to_previewFragment"
+            app:destination="@id/previewFragment"
+            app:enterAnim="@anim/enter_zoom_out"
+            app:exitAnim="@anim/exit_zoom_in"
+            app:popEnterAnim="@anim/enter_zoom_in"
+            app:popExitAnim="@anim/exit_zoom_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ndmq.android_mvvm_project_base.presentation.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_setupProjectFragment"
+            app:destination="@id/setupProjectFragment"
+            app:enterAnim="@anim/enter_zoom_out"
+            app:exitAnim="@anim/exit_zoom_in"
+            app:popEnterAnim="@anim/enter_zoom_in"
+            app:popExitAnim="@anim/exit_zoom_out" />
+        <action
+            android:id="@+id/action_homeFragment_to_allProjectsFragment"
+            app:destination="@id/allProjectsFragment"
+            app:enterAnim="@anim/enter_zoom_out"
+            app:exitAnim="@anim/exit_zoom_in"
+            app:popEnterAnim="@anim/enter_zoom_in"
+            app:popExitAnim="@anim/exit_zoom_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseBackgroundFragment"
+        android:name="com.ndmq.android_mvvm_project_base.presentation.setup_project.ChooseBackgroundFragment"
+        android:label="fragment_choose_background"
+        tools:layout="@layout/fragment_choose_background" />
+    <fragment
+        android:id="@+id/chooseFormatFragment"
+        android:name="com.ndmq.android_mvvm_project_base.presentation.setup_project.ChooseFormatFragment"
+        android:label="fragment_choose_format"
+        tools:layout="@layout/fragment_choose_format" />
+    <fragment
+        android:id="@+id/chooseCanvasSizeFragment"
+        android:name="com.ndmq.android_mvvm_project_base.presentation.setup_project.ChooseCanvasSizeFragment"
+        android:label="fragment_choose_canvas_size"
+        tools:layout="@layout/fragment_choose_canvas_size" />
+    <fragment
+        android:id="@+id/chooseFpsFragment"
+        android:name="com.ndmq.android_mvvm_project_base.presentation.setup_project.ChooseFpsFragment"
+        android:label="fragment_choose_fps"
+        tools:layout="@layout/fragment_choose_fps" />
+    <fragment
+        android:id="@+id/exportFragment"
+        android:name="com.ndmq.android_mvvm_project_base.presentation.export.ExportFragment"
+        android:label="fragment_export"
+        tools:layout="@layout/fragment_export">
+        <action
+            android:id="@+id/action_exportFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/enter_zoom_in"
+            app:exitAnim="@anim/exit_zoom_out"
+            app:popEnterAnim="@anim/enter_zoom_out"
+            app:popExitAnim="@anim/exit_zoom_in"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <dialog
+        android:id="@+id/colorPickerDialog"
+        android:name="com.ndmq.android_mvvm_project_base.presentation.ColorPickerDialog"
+        android:label="dialog_color_picker"
+        tools:layout="@layout/dialog_color_picker" />
+    <fragment
+        android:id="@+id/allProjectsFragment"
+        android:name="com.ndmq.android_mvvm_project_base.presentation.all_projects.AllProjectsFragment"
+        android:label="fragment_all_projects"
+        tools:layout="@layout/fragment_all_projects" />
+    <fragment
+        android:id="@+id/removeImageBackgroundFragment"
+        android:name="com.ndmq.android_mvvm_project_base.presentation.create_project.RemoveImageBackgroundFragment"
+        android:label="fragment_crop_image"
+        tools:layout="@layout/fragment_remove_image_background" />
+    <fragment
+        android:id="@+id/editProjectFragment"
+        android:name="com.ndmq.android_mvvm_project_base.presentation.create_project.EditProjectFragment"
+        android:label="fragment_edit_project"
+        tools:layout="@layout/fragment_edit_project" />
+    <dialog
+        android:id="@+id/setTextDialog"
+        android:name="com.ndmq.android_mvvm_project_base.presentation.create_project.dialog.SetTextDialog"
+        android:label="dialog_set_text"
+        tools:layout="@layout/dialog_set_text" />
+    <fragment
+        android:id="@+id/previewFragment"
+        android:name="com.ndmq.android_mvvm_project_base.presentation.create_project.PreviewFragment"
+        android:label="fragment_preview"
+        tools:layout="@layout/fragment_preview" />
+</navigation>

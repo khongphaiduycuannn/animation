@@ -1,0 +1,21 @@
+{
+  "categories_sticker": [
+    {
+      "category_folder": "penguin",
+      "category_name": "Penguin",
+      "size": 10,
+      "status": "free",
+      "reward_sticker_indexes": [
+        10
+      ]
+    },
+    {
+      "category_folder": "weather",
+      "category_name": "Weather",
+      "size": 10,
+      "status": "reward",
+      "reward_sticker_indexes": [
+      ]
+    }
+  ]
+}
